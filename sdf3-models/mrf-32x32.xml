@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+<sdf3 version="1.0" type="csdf" >
+<applicationGraph>
+<csdf name="noisereduction" type="">
+<actor name="II-filter-L1" type="">
+<port name="SRC-II" type="in" rate="1024*1,67*0"/>
+<port name="II-L" type="out" rate="1091*1"/>
+<port name="selfo" type="out" rate="1091*1"/>
+<port name="selfi" type="in" rate="1091*1"/>
+</actor>
+<actor name="L-filter-L1" type="">
+<port name="L-SNK" type="out" rate="67*0,1024*1"/>
+<port name="II-L" type="in" rate="1091*1"/>
+</actor>
+<actor name="II-upsamplerdec-L1" type="">
+<port name="SRC-II" type="in" rate="2*1,0,16*1,2*0,14*1,65*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,69*0"/>
+<port name="II-L" type="out" rate="902*1"/>
+<port name="selfo" type="out" rate="902*1"/>
+<port name="selfi" type="in" rate="902*1"/>
+</actor>
+<actor name="L-upsamplerdec-L1" type="">
+<port name="L-SNK" type="out" rate="18*0,3*1,14*2,65*1,0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,4*0,32*1"/>
+<port name="II-L" type="in" rate="902*1"/>
+</actor>
+<actor name="II-upsamplerrec-L1" type="">
+<port name="SRC-II" type="in" rate="2*1,0,16*1,2*0,14*1,65*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,37*0,2*1,2*0,14*1,69*0"/>
+<port name="II-L" type="out" rate="902*1"/>
+<port name="selfo" type="out" rate="902*1"/>
+<port name="selfi" type="in" rate="902*1"/>
+</actor>
+<actor name="L-upsamplerrec-L1" type="">
+<port name="L-SNK" type="out" rate="18*0,3*1,14*2,65*1,0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,5*0,3*1,14*2,33*1,4*0,32*1"/>
+<port name="II-L" type="in" rate="902*1"/>
+</actor>
+<actor name="II-downsampler-L1" type="">
+<port name="SRC-II" type="in" rate="16*2,2*0,16*2,2*0,3*1,14*2,1,2*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,16*2,3*1,14*2,0,1,3*0,3*1,0,14*2,1,2*0"/>
+<port name="II-L" type="out" rate="609*1"/>
+<port name="selfo" type="out" rate="609*1"/>
+<port name="selfi" type="in" rate="609*1"/>
+</actor>
+<actor name="L-downsampler-L1" type="">
+<port name="L-SNK" type="out" rate="38*0,15*1,2*0,1,18*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,5*0,15*1,2*0,1"/>
+<port name="II-L" type="in" rate="609*1"/>
+<port name="L-SNK1" type="out" rate="38*0,15*1,2*0,1,18*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,5*0,15*1,2*0,1"/>
+<port name="L-SNK2" type="out" rate="38*0,15*1,2*0,1,18*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,20*0,15*1,2*0,1,5*0,15*1,2*0,1"/>
+</actor>
+<actor name="II-filter-L2" type="">
+<port name="SRC-II" type="in" rate="256*1,35*0"/>
+<port name="II-L" type="out" rate="291*1"/>
+<port name="selfo" type="out" rate="291*1"/>
+<port name="selfi" type="in" rate="291*1"/>
+</actor>
+<actor name="L-filter-L2" type="">
+<port name="L-SNK" type="out" rate="35*0,256*1"/>
+<port name="II-L" type="in" rate="291*1"/>
+</actor>
+<actor name="II-upsamplerdec-L2" type="">
+<port name="SRC-II" type="in" rate="2*1,0,8*1,2*0,6*1,33*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,37*0"/>
+<port name="II-L" type="out" rate="254*1"/>
+<port name="selfo" type="out" rate="254*1"/>
+<port name="selfi" type="in" rate="254*1"/>
+</actor>
+<actor name="L-upsamplerdec-L2" type="">
+<port name="L-SNK" type="out" rate="10*0,3*1,6*2,33*1,0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,4*0,16*1"/>
+<port name="II-L" type="in" rate="254*1"/>
+</actor>
+<actor name="II-upsamplerrec-L2" type="">
+<port name="SRC-II" type="in" rate="2*1,0,8*1,2*0,6*1,33*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,21*0,2*1,2*0,6*1,37*0"/>
+<port name="II-L" type="out" rate="254*1"/>
+<port name="selfo" type="out" rate="254*1"/>
+<port name="selfi" type="in" rate="254*1"/>
+</actor>
+<actor name="L-upsamplerrec-L2" type="">
+<port name="L-SNK" type="out" rate="10*0,3*1,6*2,33*1,0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,5*0,3*1,6*2,17*1,4*0,16*1"/>
+<port name="II-L" type="in" rate="254*1"/>
+</actor>
+<actor name="II-downsampler-L2" type="">
+<port name="SRC-II" type="in" rate="8*2,2*0,8*2,2*0,3*1,6*2,1,2*0,8*2,3*1,6*2,0,1,3*0,8*2,3*1,6*2,0,1,3*0,8*2,3*1,6*2,0,1,3*0,8*2,3*1,6*2,0,1,3*0,8*2,3*1,6*2,0,1,3*0,8*2,3*1,6*2,0,1,3*0,3*1,0,6*2,1,2*0"/>
+<port name="II-L" type="out" rate="177*1"/>
+<port name="selfo" type="out" rate="177*1"/>
+<port name="selfi" type="in" rate="177*1"/>
+</actor>
+<actor name="L-downsampler-L2" type="">
+<port name="L-SNK" type="out" rate="22*0,7*1,2*0,1,10*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,5*0,7*1,2*0,1"/>
+<port name="II-L" type="in" rate="177*1"/>
+<port name="L-SNK1" type="out" rate="22*0,7*1,2*0,1,10*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,12*0,7*1,2*0,1,5*0,7*1,2*0,1"/>
+</actor>
+<actor name="SUB1" type="">
+<port name="selfo" type="out" rate="1"/>
+<port name="selfi" type="in" rate="1"/>
+<port name="L-upsamplerdec-L1-SUB1" type="in" rate="1"/>
+<port name="SUB1-II-filter-L1" type="out" rate="1"/>
+<port name="SRC-SUB1" type="in" rate="1"/>
+</actor>
+<actor name="ADD1" type="">
+<port name="selfo" type="out" rate="1"/>
+<port name="selfi" type="in" rate="1"/>
+<port name="L-filter-L1-ADD1" type="in" rate="1"/>
+<port name="L-upsamplerrec-L1-ADD1" type="in" rate="1"/>
+</actor>
+<actor name="SUB2" type="">
+<port name="selfo" type="out" rate="1"/>
+<port name="selfi" type="in" rate="1"/>
+<port name="L-upsamplerdec-L2-SUB2" type="in" rate="1"/>
+<port name="SUB2-II-filter-L2" type="out" rate="1"/>
+<port name="L-downsampler-L1-SUB2" type="in" rate="1"/>
+</actor>
+<actor name="ADD2" type="">
+<port name="selfo" type="out" rate="1"/>
+<port name="selfi" type="in" rate="1"/>
+<port name="L-filter-L2-ADD2" type="in" rate="1"/>
+<port name="L-upsamplerrec-L2-ADD2" type="in" rate="1"/>
+<port name="ADD2-II-upsamplerrec-L1" type="out" rate="1"/>
+</actor>
+<actor name="SRC" type="">
+<port name="selfo" type="out" rate="1"/>
+<port name="selfi" type="in" rate="1"/>
+<port name="SRC-SUB1" type="out" rate="1"/>
+<port name="SRC-II-downsampler-L1" type="out" rate="1"/>
+</actor>
+<channel name="II2L-filter-L1" srcActor="II-filter-L1" srcPort="II-L" dstActor="L-filter-L1" dstPort="II-L"/>
+<channel name="II2II-filter-L1" srcActor="II-filter-L1" srcPort="selfo" dstActor="II-filter-L1" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-upsamplerdec-L1" srcActor="II-upsamplerdec-L1" srcPort="II-L" dstActor="L-upsamplerdec-L1" dstPort="II-L"/>
+<channel name="II2II-upsamplerdec-L1" srcActor="II-upsamplerdec-L1" srcPort="selfo" dstActor="II-upsamplerdec-L1" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-upsamplerrec-L1" srcActor="II-upsamplerrec-L1" srcPort="II-L" dstActor="L-upsamplerrec-L1" dstPort="II-L"/>
+<channel name="II2II-upsamplerrec-L1" srcActor="II-upsamplerrec-L1" srcPort="selfo" dstActor="II-upsamplerrec-L1" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-downsampler-L1" srcActor="II-downsampler-L1" srcPort="II-L" dstActor="L-downsampler-L1" dstPort="II-L"/>
+<channel name="II2II-downsampler-L1" srcActor="II-downsampler-L1" srcPort="selfo" dstActor="II-downsampler-L1" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-filter-L2" srcActor="II-filter-L2" srcPort="II-L" dstActor="L-filter-L2" dstPort="II-L"/>
+<channel name="II2II-filter-L2" srcActor="II-filter-L2" srcPort="selfo" dstActor="II-filter-L2" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-upsamplerdec-L2" srcActor="II-upsamplerdec-L2" srcPort="II-L" dstActor="L-upsamplerdec-L2" dstPort="II-L"/>
+<channel name="II2II-upsamplerdec-L2" srcActor="II-upsamplerdec-L2" srcPort="selfo" dstActor="II-upsamplerdec-L2" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-upsamplerrec-L2" srcActor="II-upsamplerrec-L2" srcPort="II-L" dstActor="L-upsamplerrec-L2" dstPort="II-L"/>
+<channel name="II2II-upsamplerrec-L2" srcActor="II-upsamplerrec-L2" srcPort="selfo" dstActor="II-upsamplerrec-L2" dstPort="selfi" initialTokens="1"/>
+<channel name="II2L-downsampler-L2" srcActor="II-downsampler-L2" srcPort="II-L" dstActor="L-downsampler-L2" dstPort="II-L"/>
+<channel name="II2II-downsampler-L2" srcActor="II-downsampler-L2" srcPort="selfo" dstActor="II-downsampler-L2" dstPort="selfi" initialTokens="1"/>
+<channel name="SUB12SUB1" srcActor="SUB1" srcPort="selfo" dstActor="SUB1" dstPort="selfi" initialTokens="1"/>
+<channel name="ADD12ADD1" srcActor="ADD1" srcPort="selfo" dstActor="ADD1" dstPort="selfi" initialTokens="1"/>
+<channel name="SUB22SUB2" srcActor="SUB2" srcPort="selfo" dstActor="SUB2" dstPort="selfi" initialTokens="1"/>
+<channel name="ADD22ADD2" srcActor="ADD2" srcPort="selfo" dstActor="ADD2" dstPort="selfi" initialTokens="1"/>
+<channel name="SRC2SRC" srcActor="SRC" srcPort="selfo" dstActor="SRC" dstPort="selfi" initialTokens="1"/>
+<channel name="L-downsampler-L12II-upsamplerdec-L1" srcActor="L-downsampler-L1" srcPort="L-SNK" dstActor="II-upsamplerdec-L1" dstPort="SRC-II"/>
+<channel name="L-upsamplerdec-L12SUB1" srcActor="L-upsamplerdec-L1" srcPort="L-SNK" dstActor="SUB1" dstPort="L-upsamplerdec-L1-SUB1"/>
+<channel name="SUB12II-filter-L1" srcActor="SUB1" srcPort="SUB1-II-filter-L1" dstActor="II-filter-L1" dstPort="SRC-II"/>
+<channel name="L-filter-L12ADD1" srcActor="L-filter-L1" srcPort="L-SNK" dstActor="ADD1" dstPort="L-filter-L1-ADD1"/>
+<channel name="L-upsamplerrec-L12ADD1" srcActor="L-upsamplerrec-L1" srcPort="L-SNK" dstActor="ADD1" dstPort="L-upsamplerrec-L1-ADD1"/>
+<channel name="L-downsampler-L22II-upsamplerdec-L2" srcActor="L-downsampler-L2" srcPort="L-SNK" dstActor="II-upsamplerdec-L2" dstPort="SRC-II"/>
+<channel name="L-upsamplerdec-L22SUB2" srcActor="L-upsamplerdec-L2" srcPort="L-SNK" dstActor="SUB2" dstPort="L-upsamplerdec-L2-SUB2"/>
+<channel name="SUB22II-filter-L2" srcActor="SUB2" srcPort="SUB2-II-filter-L2" dstActor="II-filter-L2" dstPort="SRC-II"/>
+<channel name="L-filter-L22ADD2" srcActor="L-filter-L2" srcPort="L-SNK" dstActor="ADD2" dstPort="L-filter-L2-ADD2"/>
+<channel name="L-upsamplerrec-L22ADD2" srcActor="L-upsamplerrec-L2" srcPort="L-SNK" dstActor="ADD2" dstPort="L-upsamplerrec-L2-ADD2"/>
+<channel name="L-downsampler-L12SUB2" srcActor="L-downsampler-L1" srcPort="L-SNK1" dstActor="SUB2" dstPort="L-downsampler-L1-SUB2"/>
+<channel name="L-downsampler-L12II-downsampler-L2" srcActor="L-downsampler-L1" srcPort="L-SNK2" dstActor="II-downsampler-L2" dstPort="SRC-II"/>
+<channel name="ADD22II-upsamplerrec-L1" srcActor="ADD2" srcPort="ADD2-II-upsamplerrec-L1" dstActor="II-upsamplerrec-L1" dstPort="SRC-II"/>
+<channel name="L-downsampler-L22II-upsamplerrec-L2" srcActor="L-downsampler-L2" srcPort="L-SNK1" dstActor="II-upsamplerrec-L2" dstPort="SRC-II"/>
+<channel name="SRC2SUB1" srcActor="SRC" srcPort="SRC-SUB1" dstActor="SUB1" dstPort="SRC-SUB1"/>
+<channel name="SRC2II-downsampler-L1" srcActor="SRC" srcPort="SRC-II-downsampler-L1" dstActor="II-downsampler-L1" dstPort="SRC-II"/>
+</csdf>
+<csdfProperties>
+<actorProperties actor="II-filter-L1">
+<processor type="dp" default="true">
+<executionTime time="67*1,1024*2"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-filter-L1">
+<processor type="dp" default="true">
+<executionTime time="1091*10"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-upsamplerdec-L1">
+<processor type="dp" default="true">
+<executionTime time="21*1,14*2,69*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,69*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-upsamplerdec-L1">
+<processor type="dp" default="true">
+<executionTime time="902*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-upsamplerrec-L1">
+<processor type="dp" default="true">
+<executionTime time="21*1,14*2,69*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,41*1,14*2,69*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-upsamplerrec-L1">
+<processor type="dp" default="true">
+<executionTime time="902*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-downsampler-L1">
+<processor type="dp" default="true">
+<executionTime time="16*2,2*1,16*2,5*1,14*2,3*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,5*1,16*2,3*1,14*2,9*1,14*2,3*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-downsampler-L1">
+<processor type="dp" default="true">
+<executionTime time="609*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-filter-L2">
+<processor type="dp" default="true">
+<executionTime time="35*1,256*2"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-filter-L2">
+<processor type="dp" default="true">
+<executionTime time="291*10"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-upsamplerdec-L2">
+<processor type="dp" default="true">
+<executionTime time="13*1,6*2,37*1,6*2,25*1,6*2,25*1,6*2,25*1,6*2,25*1,6*2,25*1,6*2,37*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-upsamplerdec-L2">
+<processor type="dp" default="true">
+<executionTime time="254*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-upsamplerrec-L2">
+<processor type="dp" default="true">
+<executionTime time="13*1,6*2,37*1,6*2,25*1,6*2,25*1,6*2,25*1,6*2,25*1,6*2,25*1,6*2,37*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-upsamplerrec-L2">
+<processor type="dp" default="true">
+<executionTime time="254*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="II-downsampler-L2">
+<processor type="dp" default="true">
+<executionTime time="8*2,2*1,8*2,5*1,6*2,3*1,8*2,3*1,6*2,5*1,8*2,3*1,6*2,5*1,8*2,3*1,6*2,5*1,8*2,3*1,6*2,5*1,8*2,3*1,6*2,5*1,8*2,3*1,6*2,9*1,6*2,3*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="L-downsampler-L2">
+<processor type="dp" default="true">
+<executionTime time="177*1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="SUB1">
+<processor type="dp" default="true">
+<executionTime time="1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="ADD1">
+<processor type="dp" default="true">
+<executionTime time="1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="SUB2">
+<processor type="dp" default="true">
+<executionTime time="1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="ADD2">
+<processor type="dp" default="true">
+<executionTime time="1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+<actorProperties actor="SRC">
+<processor type="dp" default="true">
+<executionTime time="1"/>
+<memory>
+<stateSize max="-4995072469926809587"/>
+</memory>
+</processor>
+</actorProperties>
+    <channelProperties channel="II2L-filter-L1">
+        <bufferSize sz="16" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-filter-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-upsamplerdec-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-upsamplerdec-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-upsamplerrec-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-upsamplerrec-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-downsampler-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-downsampler-L1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-filter-L2">
+        <bufferSize sz="16" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-filter-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-upsamplerdec-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-upsamplerdec-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-upsamplerrec-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-upsamplerrec-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2L-downsampler-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="II2II-downsampler-L2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SUB12SUB1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="ADD12ADD1">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SUB22SUB2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="ADD22ADD2">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SRC2SRC">
+        <bufferSize sz="2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-downsampler-L12II-upsamplerdec-L1">
+        <bufferSize sz="$B5" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-upsamplerdec-L12SUB1">
+        <bufferSize sz="$B6" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SUB12II-filter-L1">
+        <bufferSize sz="$B7" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-filter-L12ADD1">
+        <bufferSize sz="$B2" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-upsamplerrec-L12ADD1">
+        <bufferSize sz="$B8" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-downsampler-L22II-upsamplerdec-L2">
+        <bufferSize sz="$B11" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-upsamplerdec-L22SUB2">
+        <bufferSize sz="$B12" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SUB22II-filter-L2">
+        <bufferSize sz="$B13" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-filter-L22ADD2">
+        <bufferSize sz="$B14" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-upsamplerrec-L22ADD2">
+        <bufferSize sz="$B3" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-downsampler-L12SUB2">
+        <bufferSize sz="$B1" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-downsampler-L12II-downsampler-L2">
+        <bufferSize sz="$B10" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="ADD22II-upsamplerrec-L1">
+        <bufferSize sz="$B9" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="L-downsampler-L22II-upsamplerrec-L2">
+        <bufferSize sz="$B15" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SRC2SUB1">
+        <bufferSize sz="$B0" src="0" dst="0" mem="0" />
+    </channelProperties>
+    <channelProperties channel="SRC2II-downsampler-L1">
+        <bufferSize sz="$B4" src="0" dst="0" mem="0" />
+    </channelProperties>
+<graphProperties/>
+</csdfProperties>
+</applicationGraph>
+</sdf3>
